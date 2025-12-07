@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #29170F;
+    font-family: 'Montserrat', sans-serif;
+     font-weight: 500;        
+    line-height: 1.6;
+    color: #333;
+     margin: 0;    
+    padding: 0;     
+
+}
+
+/* Barra de búsqueda */
+.buscador-container {
+    position: relative;
+    margin-right: 20px;
+    margin-left: -150px;
+}
+
+.buscador-input {
+    background: #ffadb4;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 40px 8px 15px;
+    font-size: 14px;
+    color: #ffffff;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.buscador-input:focus {
+    outline: none;
+    background: #29170F;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+}
+
+.buscador-input::placeholder {
+    color: #ffffff;
+}
+
+.buscador-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Para el menu de navegacion */
+
+.confi-navbar {
+    background:  #db8b92;
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+
+.confi-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-izq,
+.navbar-der {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+}
+
+.navbar-izq {
+    justify-content: flex-start;
+    flex: 1;
+    gap: 20px;
+    padding-left: 0;
+}
+
+.navbar-der {
+    justify-content: flex-end;
+      
+}
+
+.navbar-izq .nav-link,
+.navbar-der .nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.navbar-izq .nav-link:hover,
+.navbar-der .nav-link:hover {
+    color: #29170F !important;
+    transform: translateY(-2px);
+}
+
+.navbar-izq .nav-link::after,
+.navbar-der .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #29170F;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-izq .nav-link:hover::after,
+.navbar-der .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Centrar el Logo */
+.navbar-brand-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;  
+    border-radius: 50%;   
+}
+
+.logo-circulo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #29170F, #FFA500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #29170F;
+    box-shadow: 0 3px 10px #29170F;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.logo-circulo:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: #29170F;
+}
+
+/* ===== ESTILOS PARA EL BOTÓN HAMBURGUESA ===== */
+.navbar-toggler {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 8px 12px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.navbar-toggler i {
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-toggler:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== ESTILOS PARA EL MENÚ COLAPSABLE ===== */
+.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #db8b92;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-collapse .navbar-nav {
+    padding: 20px 0;
+}
+
+.navbar-collapse .nav-item {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.navbar-collapse .nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 10px 20px !important;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navbar-collapse .nav-link:hover {
+    background: rgb(255, 255, 255);
+    color: #db8b92 !important;
+}
+
+/* Seccion del titulo movible de condor */
+.hero-section {
+    height: 100vh;
+    background: url('../img/fondo.jpg');  
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 0;
+    padding-top: 90px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.3));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-title {
+    font-family: 'Libre Franklin', sans-serif!important;;
+    font-weight: 650; 
+    font-size: 6rem;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    animation-duration: 1.5s;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 300;
+    animation-duration: 1.5s;
+}
+
+.hero-btn {
+    background: linear-gradient(135deg, #db8b92, #fa9c71);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation-duration: 1.5s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px #db8b92;
+    background: linear-gradient(135deg, #db8b92, #f39068);
+    color: #29170F;
+}
+
+/* Seccion primaria de productos */
+
+.seccion-titu {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #db8b92;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.seccion-titu::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #db8b92, #d45317);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.seccion-subtitu {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.producto-card {
+    border: 10px solid #f8d7da;
+    background: #faf6f3; 
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(248, 215, 218, 0.3);;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px #f8d7da;
+}
+
+.producto-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.producto-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-titu {
+    color: #29170F;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #db8b92;
+    background: linear-gradient(135deg, #29170F, #5e2c16);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Para la animacion */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajuste de los efectos */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #29170F, #6d361d);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #6d371e, #29170F);
+}
+
+/* efecto del menu de navegacion*/
+.custom-navbar.scrolled {
+    background: rgba(139, 69, 19, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+}
+
+/* Para lo links de las redes */
+.social-links a {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #db8b92 !important;
+    transform: translateY(-2px);
+}
+
+/* ===== DISEÑO RESPONSIVO CORREGIDO ===== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 991px) {
+    .custom-navbar .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .navbar-left,
+    .navbar-right {
+        display: none !important;
+    }
+    
+    /* CORREGIDO: buscador-container en lugar de search-container */
+    .buscador-container {
+        display: none !important;
+    }
+    
+    .navbar-brand-container {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .navbar-toggler {
+        display: block !important;
+    }
+    
+    .hero-title {
+        font-size: 4rem !important;
+        letter-spacing: 4px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 70px !important;
+        background-attachment: scroll;
+    }
+    
+    .hero-title {
+        font-size: 3rem !important;
+        letter-spacing: 2px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .section-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .custom-navbar {
+        padding: 10px 0 !important;
+    }
+    
+    .logo-circulo {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .logo-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .hero-btn {
+        padding: 12px 30px !important;
+        font-size: 1rem !important;
+    }
+    
+    .section-title {
+        font-size: 2rem !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .custom-navbar {
+        padding: 8px 0 !important;
+    }
+    
+    .logo-circulo {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .logo-image {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    /* Cards responsivas */
+    .card {
+        margin-bottom: 20px !important;
+    }
+    
+    .container {
+        padding: 0 15px !important;
+    }
+    
+    /* Ajustar el menú colapsable en móviles pequeños */
+    .navbar-collapse .nav-link {
+        font-size: 14px;
+        padding: 8px 15px !important;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .navbar-toggler {
+        right: 10px;
+        padding: 6px 10px;
+    }
+}
